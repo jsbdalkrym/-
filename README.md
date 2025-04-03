@@ -1,5 +1,3 @@
-# -
-خلية حروف
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -16,13 +14,17 @@
             margin: 0;
         }
         .grid {
-            display: flex;
-            flex-wrap: wrap;
-            width: 320px;
+            display: grid;
+            grid-template-columns: repeat(5, 60px);
+            grid-gap: 5px;
+            position: relative;
+            background-color: orange;
+            padding: 20px;
+            clip-path: polygon(0% 15%, 100% 15%, 100% 85%, 0% 85%);
         }
         .cell {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background-color: white;
             border: 2px solid black;
             display: flex;
@@ -31,8 +33,10 @@
             font-size: 24px;
             font-weight: bold;
             cursor: pointer;
-            margin: 2px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        .row:nth-child(even) {
+            margin-left: 30px;
         }
         .cell.green {
             background-color: green;
@@ -47,31 +51,41 @@
 <body>
 
 <div class="grid">
-    <div class="cell">ب</div>
-    <div class="cell">د</div>
-    <div class="cell">و</div>
-    <div class="cell">ص</div>
-    <div class="cell">ق</div>
-    <div class="cell">ث</div>
-    <div class="cell">ه</div>
-    <div class="cell">ض</div>
-    <div class="cell">ي</div>
-    <div class="cell">ح</div>
-    <div class="cell">ك</div>
-    <div class="cell">ط</div>
-    <div class="cell">م</div>
-    <div class="cell">ز</div>
-    <div class="cell">ش</div>
-    <div class="cell">ظ</div>
-    <div class="cell">أ</div>
-    <div class="cell">س</div>
-    <div class="cell">ر</div>
-    <div class="cell">ت</div>
-    <div class="cell">ج</div>
-    <div class="cell">غ</div>
-    <div class="cell">ه</div>
-    <div class="cell">ع</div>
-    <div class="cell">ذ</div>
+    <div class="row">
+        <div class="cell">ب</div>
+        <div class="cell">د</div>
+        <div class="cell">و</div>
+        <div class="cell">ص</div>
+        <div class="cell">ق</div>
+    </div>
+    <div class="row">
+        <div class="cell">ث</div>
+        <div class="cell">ه</div>
+        <div class="cell">ض</div>
+        <div class="cell">ي</div>
+        <div class="cell">ح</div>
+    </div>
+    <div class="row">
+        <div class="cell">ك</div>
+        <div class="cell">ط</div>
+        <div class="cell">م</div>
+        <div class="cell">ز</div>
+        <div class="cell">ش</div>
+    </div>
+    <div class="row">
+        <div class="cell">ظ</div>
+        <div class="cell">أ</div>
+        <div class="cell">س</div>
+        <div class="cell">ر</div>
+        <div class="cell">ت</div>
+    </div>
+    <div class="row">
+        <div class="cell">ج</div>
+        <div class="cell">غ</div>
+        <div class="cell">ه</div>
+        <div class="cell">ع</div>
+        <div class="cell">ذ</div>
+    </div>
 </div>
 
 <script>
